@@ -212,7 +212,7 @@ $("#myModal").on('hidden.bs.modal', function () {
 });
 
 // Selecting Correct/Wrong Answer
-function submitAnswer() {
+function submit() {
   var selectAnswer = $(".modal-body input:checked").val();
   // Verify if correct answer was chosen and increment add/increment the points
   if (selectAnswer === questions[window.currentQuestion].correctAnswer) {
@@ -220,6 +220,12 @@ function submitAnswer() {
     window.incrementScore = questions[window.currentQuestion].points;
     score = score + window.incrementScore;
     console.log(score);
+    $('#score-value').html("  $" + score);
+  }
+  // Verify if incorrect answer was chosen and subtract/decrement the points
+  if (selectAnswer !== questions[window.currentQuestion].correctAnswer) {
+    window.decrementScore = questions[window.currentQuestion].points;
+    score = score - window.decrementScore;
     $('#score-value').html("  $" + score);
   }
 }
