@@ -75,39 +75,31 @@ body {
   width: 100%;
 }
 /* ============================ END OF BOX BUTTON ============================ */
-.btn-outline-secondary {
-  display: flex;
-  flex-direction: row;
-}
 
-.playeropt {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100vw;
-  align-content: center;
-}
-
-
-.gametitle {
-  display: flex;
-  align-items: center;
-}
-#headline {
-  font-size: 30px;
-}
-.panel-footer {
+/* ============================ SCOREBOARD ============================ */
+.score-board {
   display: flex;
   justify-content: center;
 } 
-h4 {
+
+.score-board h4 {
   font-size: 23px;
   text-decoration: underline;
 }
-h1 {
-  color: red;
+
+.jumbotron {
+  background-color: #1c7cae;
 }
 
+.score-box {
+  padding: 30px 60px 30px 60px;
+  border-radius: 4px;
+  background-color: #32E5CB;
+  color: white;
+}
 
-
-
+#score-value {
+  color: white;
+  font-size: 30px;
+}
+/* ============================ END OF SCOREBOARD ============================ */
