@@ -1,5 +1,5 @@
 var questions = [
-  /* HTML Category 1 Questions */
+  // HTML Category 1 Questions 
     {
       prompt: 'What is the expansion of HTML?',
       options: [ 'Hyper Text Markup Language', 'Holding Text Marker Language', 'Hyperlink Text Management Language', 'Holding Text Modal Language'],
@@ -31,3 +31,5 @@ var questions = [
     }
   ];
   
+  // Initializing the score at 0
+    var score = 0;
