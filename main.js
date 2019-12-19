@@ -173,3 +173,40 @@ $(function () {
     $(this).remove();
   });
 });
+
+// Grabbing questions of the array
+function getOptions(question) {
+  // Creating a div to add the questions and options to
+  var $questionDiv = $('<div id="disabled" class="text-left m-3"></div>');
+  // For each questions
+  question.options.forEach(function (option) {
+    var $div = $('<form class="form-group">');
+    var $label = $('<label class="radio-inline"></label');
+    var $input = $('<input class="dot" type="radio" name="options" value="' + option + '">');
+    $label.append($input);
+    $label.append(option);
+    $div.append($label);
+    $questionDiv.append($div);
+  });
+  return $questionDiv;
+}
+
+// Display specific questions into the modal
+function displayQuestion(e, $modal) {
+  var button = $(e.relatedTarget); // Button that triggered the modal
+  var num = parseInt(button.data('num'));
+  var question = questions[num];
+  window.currentQuestion = num;
+  $modal.find('.modal-title').text(question.prompt);
+  $modal.find('.modal-body').empty().append(getOptions(question));
+}
+// Show Modal 
+$(function () {
+  $("#myModal").on('show.bs.modal', function (event) {
+    displayQuestion(event, $(this));
+  });
+});
+// Hide Modal 
+$("#myModal").on('hidden.bs.modal', function () {
+  console.log('The modal is now hidden.');
+});
