@@ -33,3 +33,10 @@ var questions = [
   
   // Initializing the score at 0
     var score = 0;
+
+  // Hide the Modal after clicking submit button
+    $(function() {
+       $("#hide-modal").click(function(){
+       $("#myModal").modal("hide");
+       });
+   });
