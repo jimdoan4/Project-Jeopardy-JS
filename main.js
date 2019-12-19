@@ -177,12 +177,12 @@ $(function () {
 // Grabbing questions of the array
 function getOptions(question) {
   // Creating a div to add the questions and options to
-  var $questionDiv = $('<div id="disabled" class="text-left m-3"></div>');
+  var $questionDiv = $('<div id="disabled" class="text-left m-3 btn-groups"></div>');
   // For each questions
   question.options.forEach(function (option) {
     var $div = $('<form class="form-group">');
-    var $label = $('<label class="radio-inline"></label');
-    var $input = $('<input class="dot" type="radio" name="options" value="' + option + '">');
+    var $label = $('<label class=""></label');
+    var $input = $('<input class="m-4" type="checkbox" name="options" value="' + option + '">');
     $label.append($input);
     $label.append(option);
     $div.append($label);
@@ -202,11 +202,24 @@ function displayQuestion(e, $modal) {
 }
 // Show Modal 
 $(function () {
-  $("#myModal").on('show.bs.modal', function (event) {
-    displayQuestion(event, $(this));
+  $("#myModal").on('show.bs.modal', function (e) {
+    displayQuestion(e, $(this));
   });
 });
 // Hide Modal 
 $("#myModal").on('hidden.bs.modal', function () {
   console.log('The modal is now hidden.');
 });
+
+// Selecting Correct/Wrong Answer
+function submitAnswer() {
+  var selectAnswer = $(".modal-body input:checked").val();
+  // Verify if correct answer was chosen and increment add/increment the points
+  if (selectAnswer === questions[window.currentQuestion].correctAnswer) {
+    // console.log(selectAnswer);
+    window.incrementScore = questions[window.currentQuestion].points;
+    score = score + window.incrementScore;
+    console.log(score);
+    $('#score-value').html("  $" + score);
+  }
+}
