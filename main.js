@@ -177,11 +177,11 @@ $(function () {
 // Grabbing questions of the array
 function getOptions(question) {
   // Creating a div to add the questions and options to
-  var $questionDiv = $('<div id="disabled" class="text-left m-3 btn-groups"></div>');
+  var $questionDiv = $('<div id="disabled" class="text-left m-3"></div>');
   // For each questions
   question.options.forEach(function (option) {
     var $div = $('<form class="form-group">');
-    var $label = $('<label class=""></label');
+    var $label = $('<label class="text-left"></label');
     var $input = $('<input class="m-4" type="checkbox" name="options" value="' + option + '">');
     $label.append($input);
     $label.append(option);
@@ -210,6 +210,7 @@ $(function () {
 $("#myModal").on('hidden.bs.modal', function () {
   console.log('The modal is now hidden.');
 });
+
 
 // Selecting Correct/Wrong Answer
 function submit() {

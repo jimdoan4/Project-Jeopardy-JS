@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Jeopardy</title>
+        <title>Jeopardy Game</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--   Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -16,199 +16,210 @@
 
     <body>
         <div class="main-box container">
-            <div class="heading text-center p-3">
-                <p class="display-4 m-5 font-weight-bold text-light">JEOPARDY GAME</p>
+            <div class="heading text-center font-weight-bold p-3 mb-4">
+                <p>
+                    <span>C</span>
+                    <span>O</span>
+                    <span>D</span>
+                    <span>I</span>
+                    <span>N</span>
+                    <span>G</span>
+
+                    <span class="ml-5">G</span>
+                    <span>A</span>
+                    <span>M</span>
+                    <span>E</span>
+                </p>
             </div>
 
             <div id="main-board">
-                <div class="bs-example">
-                    <!-- Modal Pop Up Box -->
-                    <div id="myModal" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close m-1" data-dismiss="modal"
-                                        aria-hidden="true">X</button>
-                                    <h7 class="modal-title text-left text-dark">Modal Window</h7>
-                                </div>
-                                <div class="modal-body text-dark">
-                                </div>
-                                <div class="modal-footer">
-                                    <button id="hide-modal" type="button" class="btn btn-primary clickable"
-                                        onclick="submit()">Submit
-                                    </button>
-                                </div>
+                <!-- Modal Pop Up Box -->
+                <div id="myModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <button type="button" class="close m-1" data-dismiss="modal"
+                                    aria-hidden="true">X</button>
+                                <h4 class="modal-title text-center text-dark mr-5"></h4>
+                            </div>
+                            <div class="modal-body text-dark">
+                            </div>
+                            <div class="modal-footer">
+                                <button id="hide-modal" type="button" class="btn btn-primary clickable"
+                                    onclick="submit()">Submit
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="board-title text-light m-3">
-                    <div class="text-center">
-                        <h5>HTML 5</h5>
-                    </div>
-                    <div class="text-center">
-                        <h5>CSS</h5>
-                    </div>
-                    <div class="text-center">
-                        <h5>JAVASCRIPT</h5>
-                    </div>
-                    <div class="text-center">
-                        <h5>REACT</h5>
-                    </div>
-                    <div class="text-center">
-                        <h5>MONGODB</h5>
-                    </div>
+            <div class="board-title text-light m-3">
+                <div class="text-center mr-4">
+                    <h5>HTML 5</h5>
                 </div>
-
-                <div class="category-box" id="category-boxes">
-                    <!-- HTML Category 1 -->
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box ten" data-toggle="modal" data-target="#myModal"
-                            data-num="0">$10
-                        </button>
-                    </div>
-
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box fifty" data-toggle="modal" data-target="#myModal"
-                            data-num="1">$50
-                        </button>
-                    </div>
-
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box onehundred box" data-toggle="modal"
-                            data-target="#myModal" data-num="2">$100
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box fivehundred box" data-toggle="modal"
-                            data-target="#myModal" data-num="3">$500
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box onethousand" data-toggle="modal"
-                            data-target="#myModal" data-num="4">$1000
-                        </button>
-                    </div>
-
-                    <!-- CSS Category 2 -->
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box ten" data-toggle="modal" data-target="#myModal"
-                            data-num="5">$10
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box fifty" data-toggle="modal" data-target="#myModal"
-                            data-num="6">$50
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box onehundred" data-toggle="modal"
-                            data-target="#myModal" data-num="7">$100
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box fivehundred" data-toggle="modal"
-                            data-target="#myModal" data-num="8">$500
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box onethousand" data-toggle="modal"
-                            data-target="#myModal" data-num="9">$1000
-                        </button>
-                    </div>
-
-                    <!-- JAVASCRIPT Category 3 -->
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box ten" data-toggle="modal" data-target="#myModal"
-                            data-num="10">$10
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box fifty" data-toggle="modal" data-target="#myModal"
-                            data-num="11">$50
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box onehundred" data-toggle="modal"
-                            data-target="#myModal" data-num="12">$100
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box fivehundred" data-toggle="modal"
-                            data-target="#myModal" data-num="13">$500
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box onethousand" data-toggle="modal"
-                            data-target="#myModal" data-num="14">$1000
-                        </button>
-                    </div>
-
-                    <!-- REACT Category 4 -->
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info box ten" data-toggle="modal" data-target="#myModal"
-                            data-num="15">$10
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info fifty box" data-toggle="modal" data-target="#myModal"
-                            data-num="16">$50
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info onehundred box" data-toggle="modal"
-                            data-target="#myModal" data-num="17">$100
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info fivehundred box" data-toggle="modal"
-                            data-target="#myModal" data-num="18">$500
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info onethousand box" data-toggle="modal"
-                            data-target="#myModal" data-num="19">$1000
-                        </button>
-                    </div>
-
-                    <!-- MONGODB Category 5 -->
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info ten box" data-toggle="modal" data-target="#myModal"
-                            data-num="20">$10
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info fifty box" data-toggle="modal" data-target="#myModal"
-                            data-num="21">$50
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info onehundred box" data-toggle="modal"
-                            data-target="#myModal" data-num="22">$100
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info fivehundred box" data-toggle="modal"
-                            data-target="#myModal" data-num="23">$500
-                        </button>
-                    </div>
-                    <div class="category-question">
-                        <button type="button" class="btn btn-info onethousand box" data-toggle="modal"
-                            data-target="#myModal" data-num="24">$1000
-                        </button>
-                    </div>
+                <div class="text-center ml-3">
+                    <h5>CSS</h5>
                 </div>
-
-                <!-- SCOREBOARD -->
-                <div class="score-board jumbotron text-center">
-                    <div class="score-box text-center">
-                        <h4 class="text-light font-weight-bold">SCORE</h4>
-                        <h6 id="score-value"> </h6>
-                    </div>
-                    <div class="clearfix"></div>
+                <div class="text-center ml-3">
+                    <h5>JAVASCRIPT</h5>
+                </div>
+                <div class="text-center ml-3">
+                    <h5>REACT</h5>
+                </div>
+                <div class="text-center ml-3">
+                    <h5>MONGODB</h5>
                 </div>
             </div>
+
+            <div class="category-box" id="category-boxes">
+                <!-- HTML Category 1 -->
+
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box ten" data-toggle="modal" data-target="#myModal"
+                        data-num="0">$10
+                    </button>
+                </div>
+
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box fifty" data-toggle="modal" data-target="#myModal"
+                        data-num="1">$50
+                    </button>
+                </div>
+
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box onehundred box" data-toggle="modal"
+                        data-target="#myModal" data-num="2">$100
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box fivehundred box" data-toggle="modal"
+                        data-target="#myModal" data-num="3">$500
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box onethousand" data-toggle="modal"
+                        data-target="#myModal" data-num="4">$1000
+                    </button>
+                </div>
+
+                <!-- CSS Category 2 -->
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box ten" data-toggle="modal" data-target="#myModal"
+                        data-num="5">$10
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box fifty" data-toggle="modal" data-target="#myModal"
+                        data-num="6">$50
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box onehundred" data-toggle="modal" data-target="#myModal"
+                        data-num="7">$100
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box fivehundred" data-toggle="modal"
+                        data-target="#myModal" data-num="8">$500
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box onethousand" data-toggle="modal"
+                        data-target="#myModal" data-num="9">$1000
+                    </button>
+                </div>
+
+                <!-- JAVASCRIPT Category 3 -->
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box ten" data-toggle="modal" data-target="#myModal"
+                        data-num="10">$10
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box fifty" data-toggle="modal" data-target="#myModal"
+                        data-num="11">$50
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box onehundred" data-toggle="modal" data-target="#myModal"
+                        data-num="12">$100
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box fivehundred" data-toggle="modal"
+                        data-target="#myModal" data-num="13">$500
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box onethousand" data-toggle="modal"
+                        data-target="#myModal" data-num="14">$1000
+                    </button>
+                </div>
+
+                <!-- REACT Category 4 -->
+                <div class="category-question">
+                    <button type="button" class="btn btn-info box ten" data-toggle="modal" data-target="#myModal"
+                        data-num="15">$10
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info fifty box" data-toggle="modal" data-target="#myModal"
+                        data-num="16">$50
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info onehundred box" data-toggle="modal" data-target="#myModal"
+                        data-num="17">$100
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info fivehundred box" data-toggle="modal"
+                        data-target="#myModal" data-num="18">$500
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info onethousand box" data-toggle="modal"
+                        data-target="#myModal" data-num="19">$1000
+                    </button>
+                </div>
+
+                <!-- MONGODB Category 5 -->
+                <div class="category-question">
+                    <button type="button" class="btn btn-info ten box" data-toggle="modal" data-target="#myModal"
+                        data-num="20">$10
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info fifty box" data-toggle="modal" data-target="#myModal"
+                        data-num="21">$50
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info onehundred box" data-toggle="modal" data-target="#myModal"
+                        data-num="22">$100
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info fivehundred box" data-toggle="modal"
+                        data-target="#myModal" data-num="23">$500
+                    </button>
+                </div>
+                <div class="category-question">
+                    <button type="button" class="btn btn-info onethousand box" data-toggle="modal"
+                        data-target="#myModal" data-num="24">$1000
+                    </button>
+                </div>
+            </div>
+
+            <!-- SCOREBOARD -->
+            <div class="score-board  text-center">
+                <div class="score-box text-center">
+                    <h4 class="text-light font-weight-bold">SCORE</h4>
+                    <h6 id="score-value">$0 </h6>
+                </div>
+            </div>
+        </div>
         </div>
 
 
